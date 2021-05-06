@@ -26,7 +26,9 @@ SECRET_KEY = '3m^l^5afql#tq55cv70sie7!g06y1qt(ju!$yc6q^6%s!-^ji&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://minh-tdd-tutorial.herokuapp.com/'
+]
 
 
 # Application definition
