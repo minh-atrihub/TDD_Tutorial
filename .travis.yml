@@ -1,25 +1,25 @@
 language: python
 addons:
-  - firefox: latest
+- firefox: latest
 python:
-  - 3.7.4
+- 3.7.4
 before_install:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
-  - mkdir geckodriver
-  - tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C geckodriver
-  - export PATH=$PATH:$PWD/geckodriver
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
+- mkdir geckodriver
+- tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C geckodriver
+- export PATH=$PATH:$PWD/geckodriver
 dist: xenial
 services:
-  - xvfb
+- xvfb
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - coverage run manage.py test
+- coverage run manage.py test
 after_success:
-  - coveralls
+- coveralls
 deploy:
   provider: heroku
   app: minh-tdd-tutorial
   api_key:
-    secure: 63769b29-f159-48ff-8d44-624895a5972f
+    secure: lU1gIiyy+6kDYJ8pcOmpF6W1jO/NTO2JdMrbSUbCQSEl2dN+bEgE6OV2CFSHY8vxGwgwIxZlIikGt9usTw8jTvQAUYlI2j3ZzKsB58ynYPuOzFwcFRyMeIIMv7UFpcinwA/JU4ConXI/LzS84uIuQWl8FPudUJh6sGvG9SBkhkzgajjBzLqTCqljy9JvsfxOWGOfFaFhwgfDf7kM28U8yqm4GDNdRu4rUmslikch4O8FQ6wPD6ya8EIkeIespDcQfwGfd7+2ZVH4GRH2gHhYLRRqKbe1hE6Z5YAcixRCGSEwShiLFQCFOwld31rfIertbHVYs+JAfjmKW2wquPAHAFtOesTLIVbp++zDkdW4uAnPSmMM/OsLOeGm92l5UVT5gxne0lvyhFG+osB23H+RQwleDn2woWd5YeAalZYMD84AR0HUsjzYJMDkzRIju2FQxekuQ+YUB5MVwNuhAhxePkOmSqkC6XXaCtuHSA0FUOF9YDwpu/5To9ja5cBCZknhWzognmYjz9hwXV+IwBhn5nTSlI1lDfBAMNhLyUHsJeak++H0SZKNvNG5jmVfZdphc+3s+UydjvjYw+HBmeKZwVach4Qrm93D2wwpIVb1mRd7ZQRjO/a4V4B/L4+YwF8vWvQY+QJyk/XHdbNaeBkZVHuHXFgbMTduKG5v8LHzDww=
   on: MN_ICTRAINING-661_tdd
