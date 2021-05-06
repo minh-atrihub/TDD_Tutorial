@@ -1,5 +1,0 @@
-Django==2.2
-gunicorn
-django-heroku
-selenium
-whitenoise==5.2.0
